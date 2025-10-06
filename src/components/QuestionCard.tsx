@@ -1,7 +1,7 @@
 'use client';
-import { useEffect } from 'react';
 
-import { Question, Answer } from '@/types';
+import { Question, Answer, Subject } from '@/types';
+import { useEffect } from 'react';
 
 interface QuestionCardProps {
   question: Question;
@@ -24,7 +24,8 @@ export default function QuestionCard({
     onAnswer({
       questionId: question.id,
       answer: value,
-      type: question.type
+      type: question.type,
+      subject: question.subject // Add the subject from the question
     });
   };
 
@@ -66,9 +67,16 @@ export default function QuestionCard({
         <h3 className="text-lg font-semibold text-gray-800">
           Question {questionNumber} ({question.marks} mark{question.marks > 1 ? 's' : ''})
         </h3>
-        <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
-          {question.type === 'multiple-choice' ? 'Multiple Choice' : 'Theory'}
-        </span>
+        <div className="flex items-center space-x-2">
+          <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+            {question.type === 'multiple-choice' ? 'Multiple Choice' : 'Theory'}
+          </span>
+          {question.type === 'multiple-choice' && !disabled && (
+            <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">
+              Press A, B, C, D
+            </span>
+          )}
+        </div>
       </div>
       
       <p className="text-gray-700 mb-6 text-lg leading-relaxed">{question.question}</p>
@@ -83,23 +91,32 @@ export default function QuestionCard({
               <div
                 key={index}
                 onClick={() => handleAnswerChange(option)}
-                className={`flex items-start p-4 rounded-lg border-2 cursor-pointer transition-all ${
+                className={`flex items-start p-4 rounded-lg border-2 cursor-pointer transition-all group ${
                   isSelected
                     ? 'border-blue-500 bg-blue-50 shadow-sm'
-                    : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                    : 'border-gray-200 hover:border-blue-300 hover:bg-blue-50'
                 } ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
                 <div className={`
-                  flex-shrink-0 w-8 h-8 rounded-full border-2 flex items-center justify-center mr-4 font-semibold text-sm
+                  flex-shrink-0 w-10 h-10 rounded-full border-2 flex items-center justify-center mr-4 font-semibold text-lg
                   ${isSelected 
                     ? 'bg-blue-500 border-blue-500 text-white' 
-                    : 'bg-white border-gray-300 text-gray-700'
+                    : 'bg-white border-gray-300 text-gray-700 group-hover:border-blue-300'
                   }
                   ${disabled ? 'bg-gray-100 border-gray-300' : ''}
                 `}>
                   {optionLetter}
                 </div>
-                <span className="text-gray-700 text-lg pt-1">{option}</span>
+                <span className="text-gray-700 text-lg pt-1.5">{option}</span>
+                
+                {/* Keyboard shortcut hint */}
+                {!disabled && (
+                  <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
+                    <kbd className="px-2 py-1 text-xs font-semibold text-gray-500 bg-gray-100 border border-gray-300 rounded">
+                      {optionLetter}
+                    </kbd>
+                  </div>
+                )}
               </div>
             );
           })}
@@ -107,15 +124,22 @@ export default function QuestionCard({
       )}
 
       {question.type === 'theory' && (
-        <textarea
-          value={answer?.answer || ''}
-          onChange={(e) => handleAnswerChange(e.target.value)}
-          disabled={disabled}
-          placeholder="Type your answer here... Be as detailed as possible."
-          className={`w-full h-40 p-4 border-2 rounded-lg resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg ${
-            disabled ? 'bg-gray-100 border-gray-300 cursor-not-allowed' : 'border-gray-300'
-          }`}
-        />
+        <div>
+          <textarea
+            value={answer?.answer || ''}
+            onChange={(e) => handleAnswerChange(e.target.value)}
+            disabled={disabled}
+            placeholder="Type your answer here... Be as detailed as possible. You can write multiple paragraphs."
+            className={`w-full h-48 p-4 border-2 rounded-lg resize-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg leading-relaxed ${
+              disabled ? 'bg-gray-100 border-gray-300 cursor-not-allowed' : 'border-gray-300'
+            }`}
+          />
+          {!disabled && (
+            <div className="mt-2 text-sm text-gray-500">
+              💡 Tip: Provide detailed explanations with examples where possible.
+            </div>
+          )}
+        </div>
       )}
 
       {disabled && (
@@ -131,10 +155,15 @@ export default function QuestionCard({
 
       {/* Selected Answer Display */}
       {answer?.answer && question.type === 'multiple-choice' && (
-        <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
-          <p className="text-green-700 text-lg">
-            <strong>Selected:</strong> {answer.answer}
-          </p>
+        <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+          <div className="flex items-center">
+            <svg className="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p className="text-green-700 text-lg font-medium">
+              Selected: <strong>{answer.answer}</strong>
+            </p>
+          </div>
         </div>
       )}
     </div>
