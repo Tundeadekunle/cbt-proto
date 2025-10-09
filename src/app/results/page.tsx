@@ -226,27 +226,45 @@ export default function ResultsPage() {
             {subjectDisplayName} • Submitted: {new Date(result.submittedAt).toLocaleString()}
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-3">
+          {/* <div className="flex flex-col sm:flex-row gap-3">
             <button
               onClick={handleTakeAnotherSubject}
               className="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors"
             >
               Take Another Subject
             </button>
-            {/* <button
+            <button
               onClick={handleRetakeExam}
               className="bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition-colors"
             >
               Retake This Exam
-            </button> */}
+            </button>
             <button
               onClick={handleCloseResults}
               className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
             >
               Close Results
             </button>
-          </div>
+          </div> */}
+
+          <div className="flex flex-col sm:flex-row gap-3">
+  <button
+    onClick={() => router.push('/progress')}
+    className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
+  >
+    View My Progress
+  </button>
+  <button
+    onClick={handleCloseResults}
+    className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+  >
+    Close Results
+  </button>
+</div>
         </div>
+
+        // Add this to the action buttons section:
+
 
         {/* Persistent Notice */}
         <div className="mt-6 p-4 bg-gray-100 rounded-lg text-center">

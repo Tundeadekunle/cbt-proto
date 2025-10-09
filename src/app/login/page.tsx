@@ -3,12 +3,10 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-// import { students, validateStudent, type Student } from '@/lib/students';
-// import { getAllSubjects, getSubjectDisplayName, type Subject } from '@/lib/questions';
 import { students, validateStudent } from '@/lib/students';
-import type { Student, Subject } from '@/types'; // Fixed import
 import { getAllSubjects, getSubjectDisplayName } from '@/lib/questions';
-
+import { getAvailableSubjects, getCompletedSubjects, getStudentResults } from '@/lib/progress';
+import type { Student, Subject } from '@/types';
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({
@@ -28,13 +26,15 @@ export default function LoginPage() {
   const [filteredStudents, setFilteredStudents] = useState<Student[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [availableSubjects, setAvailableSubjects] = useState<Subject[]>([]);
+  const [completedSubjects, setCompletedSubjects] = useState<Subject[]>([]);
+  const [studentResults, setStudentResults] = useState<{[key: string]: any}>({});
   const router = useRouter();
 
   useEffect(() => {
-    // Load students and subjects
+    // Load students and all subjects
     setStudentList(students);
     setAvailableSubjects(getAllSubjects());
-    
+
     // Check for existing results
     const storedResult = localStorage.getItem('examResult');
     setHasExistingResults(!!storedResult);
@@ -53,7 +53,54 @@ export default function LoginPage() {
         console.error('Error parsing saved student data:', error);
       }
     }
-  }, []);
+
+    // Listen for changes to examResult in localStorage to refresh subjects dynamically
+    const handleStorageChange = (event: StorageEvent) => {
+      if (event.key === 'examResult') {
+        if (formData.studentId) {
+          const available = getAvailableSubjects(formData.studentId, getAllSubjects());
+          const completed = getCompletedSubjects(formData.studentId);
+          const results = getStudentResults(formData.studentId);
+          setAvailableSubjects(available);
+          setCompletedSubjects(completed);
+          setStudentResults(results);
+        }
+      }
+    };
+    const handleExamCompleted = () => {
+      if (formData.studentId) {
+        const available = getAvailableSubjects(formData.studentId, getAllSubjects());
+        const completed = getCompletedSubjects(formData.studentId);
+        const results = getStudentResults(formData.studentId);
+        setAvailableSubjects(available);
+        setCompletedSubjects(completed);
+        setStudentResults(results);
+      }
+    };
+    window.addEventListener('storage', handleStorageChange);
+    window.addEventListener('examCompleted', handleExamCompleted);
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('examCompleted', handleExamCompleted);
+    };
+  }, [formData.studentId]);
+
+  // Update available subjects when student ID changes
+  useEffect(() => {
+    if (formData.studentId) {
+      const available = getAvailableSubjects(formData.studentId, getAllSubjects());
+      const completed = getCompletedSubjects(formData.studentId);
+      const results = getStudentResults(formData.studentId);
+      
+      setAvailableSubjects(available);
+      setCompletedSubjects(completed);
+      setStudentResults(results);
+    } else {
+      setAvailableSubjects(getAllSubjects());
+      setCompletedSubjects([]);
+      setStudentResults({});
+    }
+  }, [formData.studentId]);
 
   useEffect(() => {
     if (formData.studentName.length > 1) {
@@ -88,13 +135,15 @@ export default function LoginPage() {
       newErrors.subject = 'Please select a subject';
     }
 
-    // Validate student exists
-    if (formData.studentId.trim() && formData.studentName.trim()) {
+    // Validate student exists and subject is available
+    if (formData.studentId.trim() && formData.studentName.trim() && formData.subject) {
       const validation = validateStudent(formData.studentId, formData.studentName);
       if (!validation.isValid) {
         newErrors.general = 'Student ID and name combination not found. Please check your credentials.';
       } else if (formData.subject && !validation.student?.subjects.includes(formData.subject)) {
         newErrors.general = 'You are not registered for this subject.';
+      } else if (completedSubjects.includes(formData.subject as Subject)) {
+        newErrors.general = 'You have already completed this subject. Please select another subject.';
       }
     }
 
@@ -122,6 +171,12 @@ export default function LoginPage() {
 
       if (formData.subject && !validation.student?.subjects.includes(formData.subject)) {
         setErrors(prev => ({ ...prev, general: 'You are not registered for this subject.' }));
+        setIsLoading(false);
+        return;
+      }
+
+      if (formData.subject !== '' && completedSubjects.includes(formData.subject as Subject)) {
+        setErrors(prev => ({ ...prev, general: 'You have already completed this subject.' }));
         setIsLoading(false);
         return;
       }
@@ -183,6 +238,10 @@ export default function LoginPage() {
     setHasExistingResults(false);
   };
 
+  const handleViewProgress = () => {
+    router.push('/progress');
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -191,7 +250,6 @@ export default function LoginPage() {
           <div className="mx-auto w-20 h-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg mb-4">
             <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l9 5m-9-5v8" />
             </svg>
           </div>
           <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
@@ -201,12 +259,42 @@ export default function LoginPage() {
             Student Login
           </h2>
           <p className="mt-2 text-sm text-gray-600 max-w-sm mx-auto">
-            Select your subject and enter your credentials to start the exam
+            Select an available subject to start your exam
           </p>
         </div>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        {/* Progress Summary */}
+        {formData.studentId && completedSubjects.length > 0 && (
+          <div className="mb-6 bg-green-50 border border-green-200 rounded-xl p-4 shadow-sm">
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-sm font-semibold text-green-800 flex items-center">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Completed Subjects: {completedSubjects.length}/4
+              </h3>
+              <button
+                onClick={handleViewProgress}
+                className="text-green-700 text-sm font-medium hover:text-green-800"
+              >
+                View Progress
+              </button>
+            </div>
+            <div className="grid grid-cols-2 gap-2 text-xs">
+              {completedSubjects.map(subject => (
+                <div key={subject} className="bg-green-100 text-green-800 px-2 py-1 rounded text-center">
+                  {getSubjectDisplayName(subject)}
+                  {studentResults[subject] && (
+                    <div className="font-bold">{studentResults[subject].score}/110</div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Existing Results Notification */}
         {hasExistingResults && (
           <div className="mb-6 bg-yellow-50 border border-yellow-200 rounded-xl p-4 shadow-sm">
@@ -247,38 +335,6 @@ export default function LoginPage() {
         {/* Login Form */}
         <div className="bg-white py-8 px-6 shadow-2xl shadow-blue-100/50 rounded-2xl border border-gray-100">
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Subject Selection */}
-            <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                Select Subject <span className="text-red-500">*</span>
-              </label>
-              <select
-                id="subject"
-                name="subject"
-                required
-                value={formData.subject}
-                onChange={(e) => handleInputChange('subject', e.target.value)}
-                className={`block w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all ${
-                  errors.subject ? 'border-red-300 bg-red-50' : 'border-gray-300'
-                }`}
-              >
-                <option value="">Choose a subject...</option>
-                {availableSubjects.map((subject) => (
-                  <option key={subject} value={subject}>
-                    {getSubjectDisplayName(subject)}
-                  </option>
-                ))}
-              </select>
-              {errors.subject && (
-                <p className="mt-2 text-sm text-red-600 flex items-center">
-                  <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                  </svg>
-                  {errors.subject}
-                </p>
-              )}
-            </div>
-
             {/* Student ID Field */}
             <div>
               <label htmlFor="studentId" className="block text-sm font-medium text-gray-700 mb-2">
@@ -300,7 +356,7 @@ export default function LoginPage() {
                   className={`block w-full pl-10 pr-4 py-3 border rounded-xl placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all ${
                     errors.studentId ? 'border-red-300 bg-red-50' : 'border-gray-300'
                   }`}
-                  placeholder="Enter your student ID (e.g., STU001)"
+                  placeholder="Enter your student ID"
                 />
               </div>
               {errors.studentId && (
@@ -313,8 +369,8 @@ export default function LoginPage() {
               )}
             </div>
 
-            {/* Student Name Field with Autocomplete */}
-            <div className="relative">
+            {/* Student Name Field */}
+            <div>
               <label htmlFor="studentName" className="block text-sm font-medium text-gray-700 mb-2">
                 Full Name <span className="text-red-500">*</span>
               </label>
@@ -331,41 +387,61 @@ export default function LoginPage() {
                   required
                   value={formData.studentName}
                   onChange={(e) => handleInputChange('studentName', e.target.value)}
-                  onFocus={() => setShowSuggestions(true)}
                   className={`block w-full pl-10 pr-4 py-3 border rounded-xl placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all ${
                     errors.studentName ? 'border-red-300 bg-red-50' : 'border-gray-300'
                   }`}
-                  placeholder="Start typing your name..."
-                  autoComplete="off"
+                  placeholder="Enter your full name"
                 />
               </div>
-
-              {/* Autocomplete Suggestions */}
-              {showSuggestions && filteredStudents.length > 0 && (
-                <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-auto">
-                  {filteredStudents.map((student) => (
-                    <button
-                      key={student.id}
-                      type="button"
-                      onClick={() => handleStudentSelect(student)}
-                      className="w-full text-left px-4 py-3 hover:bg-blue-50 border-b border-gray-100 last:border-b-0 transition-colors"
-                    >
-                      <div className="font-medium text-gray-900">{student.name}</div>
-                      <div className="text-sm text-gray-600">ID: {student.id} • {student.class}</div>
-                      <div className="text-xs text-gray-500">
-                        Subjects: {student.subjects.map((sub: Subject) => getSubjectDisplayName(sub)).join(', ')}
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              )}
-              
               {errors.studentName && (
                 <p className="mt-2 text-sm text-red-600 flex items-center">
                   <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                   </svg>
                   {errors.studentName}
+                </p>
+              )}
+            </div>
+
+            {/* Subject Selection */}
+            <div>
+              <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                Select Subject <span className="text-red-500">*</span>
+                {availableSubjects.length === 0 && formData.studentId && (
+                  <span className="ml-2 text-green-600 text-xs font-normal">
+                    (All subjects completed! 🎉)
+                  </span>
+                )}
+              </label>
+              <select
+                id="subject"
+                name="subject"
+                required
+                value={formData.subject}
+                onChange={(e) => handleInputChange('subject', e.target.value)}
+                disabled={availableSubjects.length === 0}
+                className={`block w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all ${
+                  errors.subject ? 'border-red-300 bg-red-50' : 'border-gray-300'
+                } ${availableSubjects.length === 0 ? 'bg-gray-100 cursor-not-allowed' : ''}`}
+              >
+                <option value="">
+                  {availableSubjects.length === 0 && formData.studentId 
+                    ? 'All subjects completed' 
+                    : 'Choose a subject...'
+                  }
+                </option>
+                {availableSubjects.map((subject) => (
+                  <option key={subject} value={subject}>
+                    {getSubjectDisplayName(subject)}
+                  </option>
+                ))}
+              </select>
+              {errors.subject && (
+                <p className="mt-2 text-sm text-red-600 flex items-center">
+                  <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                  </svg>
+                  {errors.subject}
                 </p>
               )}
             </div>
@@ -394,7 +470,7 @@ export default function LoginPage() {
                   <div>
                     <p className="text-green-800 font-medium">Ready for exam</p>
                     <p className="text-green-700 text-sm">
-                      {formData.studentName} (ID: {formData.studentId}) - {getSubjectDisplayName(formData.subject)}
+                      {formData.studentName} - {getSubjectDisplayName(formData.subject)}
                     </p>
                   </div>
                 </div>
@@ -405,7 +481,7 @@ export default function LoginPage() {
             <div>
               <button
                 type="submit"
-                disabled={isLoading}
+                disabled={isLoading || availableSubjects.length === 0}
                 className="w-full flex justify-center items-center py-3.5 px-4 border border-transparent rounded-xl shadow-lg text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:-translate-y-0.5"
               >
                 {isLoading ? (
@@ -416,6 +492,8 @@ export default function LoginPage() {
                     </svg>
                     Verifying...
                   </>
+                ) : availableSubjects.length === 0 ? (
+                  'All Subjects Completed!'
                 ) : (
                   <>
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -430,40 +508,73 @@ export default function LoginPage() {
             {/* Quick Info */}
             <div className="text-center">
               <p className="text-xs text-gray-500">
-                All exams are 2 hours duration with 70 questions (60 MC + 10 Theory)
+                {availableSubjects.length > 0 
+                  ? `${availableSubjects.length} subject(s) remaining • 2 hours each`
+                  : 'Congratulations! You have completed all subjects.'
+                }
               </p>
             </div>
           </form>
         </div>
 
-        {/* Subjects Information */}
-        <div className="mt-8 bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-4">
-            <h3 className="text-lg font-semibold text-white flex items-center">
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-              Available Subjects
-            </h3>
-          </div>
-          <div className="p-6">
-            <div className="grid grid-cols-1 gap-4">
-              {availableSubjects.map((subject) => (
-                <div key={subject} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                  <div>
-                    <h4 className="font-semibold text-gray-900">{getSubjectDisplayName(subject)}</h4>
-                    <p className="text-sm text-gray-600">70 questions • 2 hours • 110 total marks</p>
-                  </div>
-                  <div className="text-right">
-                    <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
-                      Available
-                    </span>
-                  </div>
+        {/* Progress Overview */}
+        {formData.studentId && (
+          <div className="mt-8 bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-4">
+              <h3 className="text-lg font-semibold text-white flex items-center">
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                Your Progress
+              </h3>
+            </div>
+            <div className="p-6">
+              <div className="grid grid-cols-2 gap-4 text-sm">
+                {getAllSubjects().map((subject) => {
+                  const isCompleted = completedSubjects.includes(subject);
+                  const isAvailable = availableSubjects.includes(subject);
+                  const result = studentResults[subject];
+                  
+                  return (
+                    <div
+                      key={subject}
+                      className={`p-3 rounded-lg border-2 ${
+                        isCompleted
+                          ? 'bg-green-50 border-green-200'
+                          : isAvailable
+                          ? 'bg-blue-50 border-blue-200'
+                          : 'bg-gray-50 border-gray-200 opacity-50'
+                      }`}
+                    >
+                      <div className="font-medium text-gray-900">
+                        {getSubjectDisplayName(subject)}
+                      </div>
+                      <div className="text-xs text-gray-600 mt-1">
+                        {isCompleted ? (
+                          <span className="text-green-600 font-semibold">
+                            ✅ Completed: {result?.score}/110
+                          </span>
+                        ) : isAvailable ? (
+                          <span className="text-blue-600">Available</span>
+                        ) : (
+                          <span className="text-gray-500">Not available</span>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              
+              {completedSubjects.length === getAllSubjects().length && (
+                <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg text-center">
+                  <p className="text-yellow-800 font-semibold">
+                    🎉 Congratulations! You have completed all subjects!
+                  </p>
                 </div>
-              ))}
+              )}
             </div>
           </div>
-        </div>
+        )}
 
         {/* Support Information */}
         <div className="mt-6 text-center">

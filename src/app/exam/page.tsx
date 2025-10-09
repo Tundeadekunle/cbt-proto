@@ -136,6 +136,10 @@ export default function ExamPage() {
     };
 
     try {
+      // Mark subject as completed before anything else
+      const { markSubjectAsCompleted } = await import('@/lib/progress');
+      markSubjectAsCompleted(result);
+
       // Save to Google Sheets
       const response = await fetch('/api/save-result', {
         method: 'POST',
@@ -148,6 +152,7 @@ export default function ExamPage() {
         localStorage.removeItem(`examAnswers_${studentData.subject}`);
         localStorage.removeItem('examStartTime');
         localStorage.setItem('examResult', JSON.stringify(result));
+        window.dispatchEvent(new Event('examCompleted'));
         router.push('/results');
       } else {
         const errorData = await response.json();
@@ -156,10 +161,13 @@ export default function ExamPage() {
       }
     } catch (error) {
       console.error('Submission error:', error);
-      // Even if Google Sheets fails, still show results to student
+      // Mark subject as completed even if Google Sheets fails
+      const { markSubjectAsCompleted } = await import('@/lib/progress');
+      markSubjectAsCompleted(result);
       localStorage.removeItem(`examAnswers_${studentData.subject}`);
       localStorage.removeItem('examStartTime');
       localStorage.setItem('examResult', JSON.stringify(result));
+      window.dispatchEvent(new Event('examCompleted'));
       router.push('/results');
     }
   };

@@ -20,8 +20,8 @@ export const getQuestionsBySubject = (subject: Subject): Question[] => {
 };
 
 export const getExamDurationBySubject = (subject: Subject): number => {
-  // All subjects have 2-hour duration
-  return 120; // 2 hours in minutes
+  // All subjects have 20-minute duration
+  return 20; // 20 minutes in minutes
 };
 
 export const getSubjectDisplayName = (subject: Subject): string => {
