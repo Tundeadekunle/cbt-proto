@@ -28,12 +28,19 @@ export default function Timer({ duration, onTimeUp, isRunning }: TimerProps) {
     return () => clearInterval(timer);
   }, [isRunning, onTimeUp]);
 
+  // const formatTime = (seconds: number) => {
+  //   const hrs = Math.floor(seconds / 12000);
+  //   const mins = Math.floor((seconds % 1200) / 60);
+  //   const secs = seconds % 60;
+  //   return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  // };
+
   const formatTime = (seconds: number) => {
-    const hrs = Math.floor(seconds / 12000);
-    const mins = Math.floor((seconds % 1200) / 60);
-    const secs = seconds % 60;
+    const hrs = Math.floor(seconds / 3600);      // 3600 seconds in 1 hour
+    const mins = Math.floor((seconds % 3600) / 60); // Remaining minutes
+    const secs = seconds % 60;                   // Remaining seconds
     return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-  };
+};
 
   const progress = (timeLeft / (duration * 60)) * 100;
 
@@ -50,7 +57,7 @@ export default function Timer({ duration, onTimeUp, isRunning }: TimerProps) {
       <div className="w-full bg-gray-200 rounded-full h-3">
         <div
           className={`h-3 rounded-full transition-all duration-1000 ${
-            progress < 20 ? 'bg-red-600' : 'bg-blue-600'
+            progress < 60 ? 'bg-red-600' : 'bg-blue-600'
           }`}
           style={{ width: `${progress}%` }}
         ></div>

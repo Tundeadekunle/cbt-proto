@@ -123,9 +123,10 @@ export default function ExamPage() {
         return answer?.answer || 'Not answered';
       });
 
-    const timeSpentMinutes = Math.floor((examDuration * 60 - timeLeft) / 60);
-    const timeSpentFormatted = `${timeSpentMinutes} minutes`;
-
+    // const timeSpentMinutes = Math.floor((examDuration * 60 - timeLeft) / 60);
+    // const timeSpentFormatted = `${timeSpentMinutes} minutes`;
+const timeSpentMinutes = examDuration * 60 - timeLeft;
+const timeSpentFormatted = `${timeSpentMinutes} minutes`;
     const result = {
       ...studentData,
       multipleChoiceScore,
@@ -233,14 +234,14 @@ export default function ExamPage() {
                   <li>• 1 mark per question</li>
                 </ul>
               </div>
-              <div>
+              {/* <div>
                 <h3 className="font-semibold text-gray-800 mb-3">Section B: Theory (10 Questions)</h3>
                 <ul className="text-sm text-gray-700 space-y-2">
                   <li>• Comprehensive questions</li>
                   <li>• Show all your working</li>
                   <li>• 5 marks per question</li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -251,13 +252,13 @@ export default function ExamPage() {
                 <svg className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span><strong>Duration:</strong> 20  minutes (1200 seconds minutes)</span>
+                <span><strong>Duration:</strong> 1 Hour (60 minutes)</span>
               </li>
               <li className="flex items-start">
                 <svg className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span><strong>Total Marks:</strong> 110 (60 for MC + 50 for Theory)</span>
+                <span><strong>Total Marks:</strong> 110 (60 for MC)</span>
               </li>
               <li className="flex items-start">
                 <svg className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -269,7 +270,7 @@ export default function ExamPage() {
                 <svg className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span><strong>Theory Questions:</strong> Show all your working</span>
+                {/* <span><strong>Theory Questions:</strong> Show all your working</span> */}
               </li>
               <li className="flex items-start">
                 <svg className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

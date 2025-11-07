@@ -9,10 +9,15 @@ export default function HomePage() {
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-2">
               <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {/* <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l9 5m-9-5v8" />
-                </svg>
+                </svg> */}
+                <img 
+            src="/mathal-logo.jpg" 
+            alt="Mathal International School Logo" 
+            className="w-full h-full object-cover"
+          />
               </div>
               <span className="text-white text-xl font-bold">Mathal Int'l School</span>
             </div>
