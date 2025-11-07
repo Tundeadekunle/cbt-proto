@@ -1,6 +1,4 @@
 import { Question, Subject } from '@/types';
-import { mathematicsQuestions } from './mathematics';
-import { englishQuestions } from './english';
 import { scienceQuestions } from './science';
 import { socialStudiesQuestions } from './social-studies';
 import { historyQuestions } from './history';
