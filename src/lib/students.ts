@@ -87,7 +87,7 @@ export const students: Student[] = [
   },
   { 
     id: 'MTH0013STU', 
-    name: 'Ogunbesan Marvelous', 
+    name: 'Ogungbesan Marvellous', 
     class: 'Basic VI', 
     email: 'marvvy@school.edu',
     subjects: ['history', 'computer', 'crs', 'phe', 'preVocation', 'science', 'social-studies']
@@ -108,81 +108,19 @@ export const students: Student[] = [
   },
   { 
     id: 'MTH0016STU', 
-    name: 'Farredha', 
-    class: 'JSS1', 
+    name: 'Olawale Farredha', 
+    class: 'Basic VI', 
     email: 'farredha@school.edu',
     subjects: ['history', 'computer', 'crs', 'phe', 'preVocation', 'science', 'social-studies']
   },
   { 
     id: 'MTH0017STU', 
-    name: 'Gbolahun', 
-    class: 'JSS1', 
+    name: 'Ajayi Omogbolahun', 
+    class: 'Basic VI', 
     email: 'gbolly@school.edu',
     subjects: ['history', 'computer', 'crs', 'phe', 'preVocation', 'science', 'social-studies']
   },
-  { 
-    id: 'MTH018STU', 
-    name: 'Olaokun Desire', 
-    class: 'Basic VI', 
-    email: 'olakdesire@school.edu',
-    subjects: ['history', 'computer', 'crs', 'phe', 'preVocation', 'science', 'social-studies']
-  },
-  { 
-    id: 'MTH0019STU', 
-    name: 'Erinoso Lanre', 
-    class: 'Basic VI', 
-    email: 'erinlarry@school.edu',
-    subjects: ['history', 'computer', 'crs', 'phe', 'preVocation', 'science', 'social-studies']
-  },
-  { 
-    id: 'MTH0020STU', 
-    name: 'Okeowo Anjola', 
-    class: 'Basic VI', 
-    email: 'anjy@school.edu',
-    subjects: ['history', 'computer', 'crs', 'phe', 'preVocation', 'science', 'social-studies']
-  },
-  { 
-    id: 'MTH0021STU', 
-    name: 'Adeoye Fathia', 
-    class: 'Basic VI', 
-    email: 'adefathy@school.edu',
-    subjects: ['history', 'computer', 'crs', 'phe', 'preVocation', 'science', 'social-studies']
-  },
-  { 
-    id: 'MTH0022STU', 
-    name: 'Oluwalose Rokeebat', 
-    class: 'Basic VI', 
-    email: 'rockybat@school.edu',
-    subjects: ['history', 'computer', 'crs', 'phe', 'preVocation', 'science', 'social-studies']
-  },
-  { 
-    id: 'MTH0023STU', 
-    name: 'Oyenola Richard', 
-    class: 'Basic VI', 
-    email: 'oyerich@school.edu',
-    subjects: ['history', 'computer', 'crs', 'phe', 'preVocation', 'science', 'social-studies']
-  },
-  { 
-    id: 'MTH0024STU', 
-    name: 'Koleoso Rachel', 
-    class: 'Basic VI', 
-    email: 'kollyreach@school.edu',
-    subjects: ['history', 'computer', 'crs', 'phe', 'preVocation', 'science', 'social-studies']
-  },
-  { 
-    id: 'MTH0025STU', 
-    name: 'Sanni Basit', 
-    class: 'BASIC VI', 
-    email: 'sanni@school.edu',
-    subjects: ['history', 'computer', 'crs', 'phe', 'preVocation', 'science', 'social-studies']
-  },
-  { 
-    id: 'MTH0026STU', 
-    name: 'Jesusoretire Hodiah', 
-    class: 'BASIC VI', 
-    email: 'jsy@school.edu',
-    subjects: ['history', 'computer', 'crs', 'phe', 'preVocation', 'science', 'social-studies']
-  },
+  
 { 
     id: 'MTH0027STU', 
     name: 'Wale Seun', 

@@ -333,7 +333,7 @@ export default function HomePage() {
               <h3 className="font-semibold text-white mb-4">Support</h3>
               <ul className="space-y-2">
                 <li><a href="mailto:support@examportal.com" className="text-gray-400 hover:text-white transition-colors">support@mathalintlschool.com</a></li>
-                <li><a href="tel:+1234567890" className="text-gray-400 hover:text-white transition-colors">+1 (234) 567-890</a></li>
+                <li><a href="tel:+1234567890" className="text-gray-400 hover:text-white transition-colors">+234 07034687011</a></li>
                 <li><span className="text-gray-400">Mon-Fri: 9AM-6PM</span></li>
               </ul>
             </div>
