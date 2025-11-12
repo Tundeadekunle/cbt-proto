@@ -6,6 +6,8 @@ import { computerQuestions } from './computer';
 import { preVocationQuestions } from './preVocation';
 import { pheQuestions } from './phe';
 import { crsQuestions } from './crs';
+import {ccaQuestions} from './cca';
+import {yorubaQuestions} from './yoruba';
 
 export const getQuestionsBySubject = (subject: Subject): Question[] => {
   switch (subject) {
@@ -19,6 +21,10 @@ export const getQuestionsBySubject = (subject: Subject): Question[] => {
       return crsQuestions;
       case 'phe':
       return pheQuestions;
+      case 'cca':
+      return ccaQuestions;
+      case 'yoruba':
+      return yorubaQuestions;
     case 'science':
       return scienceQuestions;
     case 'social-studies':
@@ -53,6 +59,10 @@ export const getSubjectDisplayName = (subject: Subject): string => {
       return 'Christian Religious Studies';
       case 'phe':
       return 'Physical and Health Education';
+      case 'cca':
+      return 'Cultural and Creative Arts';
+      case 'yoruba':
+      return 'Ede Yoruba';
       case 'preVocation':
       return 'Pre - Vocation';
     default:
@@ -61,5 +71,5 @@ export const getSubjectDisplayName = (subject: Subject): string => {
 };
 
 export const getAllSubjects = (): Subject[] => {
-  return ['history', 'computer', 'science', 'social-studies', 'crs', 'phe', 'preVocation'];
+  return ['history', 'computer', 'science', 'social-studies', 'crs', 'phe', 'preVocation' , 'cca', 'yoruba' ];
 };

@@ -71,11 +71,11 @@ export default function HomePage() {
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 text-center border border-white/20">
-              <div className="text-3xl font-bold text-white mb-2">70+</div>
+              <div className="text-3xl font-bold text-white mb-2">60</div>
               <div className="text-white/80">Total Questions</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 text-center border border-white/20">
-              <div className="text-3xl font-bold text-white mb-2">120</div>
+              <div className="text-3xl font-bold text-white mb-2">60</div>
               <div className="text-white/80">Minutes Duration</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 text-center border border-white/20">
@@ -143,7 +143,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Multiple Question Types</h3>
               <p className="text-gray-600">
-                60 multiple-choice questions and 10 comprehensive theory questions to test different skills.
+                60 multiple-choice questions.
               </p>
             </div>
 
@@ -227,7 +227,7 @@ export default function HomePage() {
                     <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-green-600 text-sm font-bold">1</span>
                     </div>
-                    <p className="text-gray-700">Total duration: <strong>2 hours (120 minutes)</strong></p>
+                    <p className="text-gray-700">Total duration: <strong>1 hour (60 minutes)</strong></p>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -235,12 +235,12 @@ export default function HomePage() {
                     </div>
                     <p className="text-gray-700"><strong>60 multiple-choice</strong> questions (1 mark each)</p>
                   </div>
-                  <div className="flex items-start space-x-3">
+                  {/* <div className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-green-600 text-sm font-bold">3</span>
                     </div>
                     <p className="text-gray-700"><strong>10 theory</strong> questions (5 marks each)</p>
-                  </div>
+                  </div> */}
                   <div className="flex items-start space-x-3">
                     <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-green-600 text-sm font-bold">4</span>
@@ -297,9 +297,11 @@ export default function HomePage() {
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
                 <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
-                  </svg>
+                  <img 
+            src="/mathal-logo.jpg" 
+            alt="Mathal International School Logo" 
+            className="w-full h-full object-cover"
+          />
                 </div>
                 <span className="text-white text-xl font-bold">Mathal Int'l School</span>
               </div>

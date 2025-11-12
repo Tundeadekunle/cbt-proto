@@ -258,7 +258,7 @@ const timeSpentFormatted = `${timeSpentMinutes} minutes`;
                 <svg className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span><strong>Total Marks:</strong> 110 (60 for MC)</span>
+                <span><strong>Total Marks:</strong> 60 </span>
               </li>
               <li className="flex items-start">
                 <svg className="w-5 h-5 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -457,7 +457,7 @@ const timeSpentFormatted = `${timeSpentMinutes} minutes`;
               <span className="text-center p-1 bg-blue-100 rounded col-span-5">Q51-60</span>
             </div>
           </div>
-          <div className="bg-white rounded-lg shadow p-4">
+          {/* <div className="bg-white rounded-lg shadow p-4">
             <h4 className="font-semibold text-gray-800 mb-2">Section B: Theory (10 Questions)</h4>
             <div className="grid grid-cols-5 gap-1 text-xs">
               <span className="text-center p-1 bg-green-100 rounded">Q61</span>
@@ -471,7 +471,7 @@ const timeSpentFormatted = `${timeSpentMinutes} minutes`;
               <span className="text-center p-1 bg-green-100 rounded">Q69</span>
               <span className="text-center p-1 bg-green-100 rounded">Q70</span>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Quick Jump Buttons */}

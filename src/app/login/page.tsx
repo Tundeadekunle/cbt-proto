@@ -273,7 +273,7 @@ export default function LoginPage() {
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                Completed Subjects: {completedSubjects.length}/4
+                Completed Subjects: {completedSubjects.length}/9
               </h3>
               <button
                 onClick={handleViewProgress}
@@ -287,7 +287,7 @@ export default function LoginPage() {
                 <div key={subject} className="bg-green-100 text-green-800 px-2 py-1 rounded text-center">
                   {getSubjectDisplayName(subject)}
                   {studentResults[subject] && (
-                    <div className="font-bold">{studentResults[subject].score}/110</div>
+                    <div className="font-bold">{studentResults[subject].score}/60</div>
                   )}
                 </div>
               ))}
@@ -509,7 +509,7 @@ export default function LoginPage() {
             <div className="text-center">
               <p className="text-xs text-gray-500">
                 {availableSubjects.length > 0 
-                  ? `${availableSubjects.length} subject(s) remaining • 2 hours each`
+                  ? `${availableSubjects.length} subject(s) remaining • 1 hour each`
                   : 'Congratulations! You have completed all subjects.'
                 }
               </p>
@@ -552,7 +552,7 @@ export default function LoginPage() {
                       <div className="text-xs text-gray-600 mt-1">
                         {isCompleted ? (
                           <span className="text-green-600 font-semibold">
-                            ✅ Completed: {result?.score}/110
+                            ✅ Completed: {result?.score}/60
                           </span>
                         ) : isAvailable ? (
                           <span className="text-blue-600">Available</span>

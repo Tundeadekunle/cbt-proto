@@ -117,7 +117,7 @@ export default function ProgressPage() {
                       <div>
                         <p className="text-gray-600">Score</p>
                         <p className="text-2xl font-bold text-green-600">
-                          {result.score}/110
+                          {result.score}/60
                         </p>
                       </div>
                       <div>
