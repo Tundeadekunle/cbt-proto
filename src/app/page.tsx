@@ -53,12 +53,12 @@ export default function HomePage() {
               Take your exams with confidence and get instant results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link
-                href="/login"
+              {/* <Link
+                href="/login" 
                 className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/25"
               >
                 Start Your Exam
-              </Link>
+              </Link> */}
               <a
                 href="#features"
                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors"
@@ -274,12 +274,12 @@ export default function HomePage() {
             Join thousands of students who have successfully completed their examinations through our platform.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
+            {/* <Link
               href="/login"
               className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors shadow-lg"
             >
               Start Exam Now
-            </Link>
+            </Link> */}
             <a
               href="#instructions"
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors"
