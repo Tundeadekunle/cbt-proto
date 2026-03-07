@@ -1,848 +1,425 @@
 import { Question } from '@/types';
 
 export const historyQuestions: Question[] = [
-  // Section A: Multiple Choice Questions (60 Questions)
+  // Section A: Multiple Choice Questions (30 Questions)
   {
     id: 1,
     type: 'multiple-choice',
     subject: 'history',
-    question: "Nigeria became an independent nation in the year _______.",
+    question: "Civilian rule means a government that is led by ________.",
     options: [
-      "1960",
-      "1970",
-      "1950",
-      "1980"
+      "soldiers",
+      "civilians",
+      "police officers",
+      "traditional rulers"
     ],
-    correctAnswer: "1960",
+    correctAnswer: "civilians",
     marks: 1
   },
   {
     id: 2,
     type: 'multiple-choice',
     subject: 'history',
-    question: "The first capital city of Nigeria was _______.",
+    question: "Nigeria first practiced civilian rule in the year ________.",
     options: [
-      "Lagos",
-      "Abuja",
-      "Ibadan",
-      "Calabar"
+      "1954",
+      "1960",
+      "1966",
+      "1999"
     ],
-    correctAnswer: "Lagos",
+    correctAnswer: "1960",
     marks: 1
   },
   {
     id: 3,
     type: 'multiple-choice',
     subject: 'history',
-    question: "The major ethnic groups in Nigeria are _______.",
+    question: "The head of government during civilian rule is called the ________.",
     options: [
-      "Yoruba, Hausa, and Igbo",
-      "Tiv, Efik, and Ijaw",
-      "Edo, Nupe, and Gwari",
-      "Fulani, Urhobo, and Kanuri"
+      "Governor",
+      "Prime Minister",
+      "President",
+      "General"
     ],
-    correctAnswer: "Yoruba, Hausa, and Igbo",
+    correctAnswer: "President",
     marks: 1
   },
   {
     id: 4,
     type: 'multiple-choice',
     subject: 'history',
-    question: "The cultural heritage of a people includes their _______.",
+    question: "One feature of civilian rule is ________.",
     options: [
-      "Weather and rainfall",
-      "Beliefs, customs, and traditions",
-      "Schools and hospitals",
-      "Farms and roads"
+      "military decree",
+      "election of leaders",
+      "coup d'état",
+      "suspension of the constitution"
     ],
-    correctAnswer: "Beliefs, customs, and traditions",
+    correctAnswer: "election of leaders",
     marks: 1
   },
   {
     id: 5,
     type: 'multiple-choice',
     subject: 'history',
-    question: "Which of the following is an example of Nigerian traditional attire?",
+    question: "Civilian rule encourages ________ in governance.",
     options: [
-      "Jeans and T-shirt",
-      "Agbada and Buba",
-      "Suit and Tie",
-      "Skirt and Blouse"
+      "dictatorship",
+      "democracy",
+      "force",
+      "war"
     ],
-    correctAnswer: "Agbada and Buba",
+    correctAnswer: "democracy",
     marks: 1
   },
   {
     id: 6,
     type: 'multiple-choice',
     subject: 'history',
-    question: "The Nigerian coat of arms has two white horses that stand for _______.",
+    question: "The return to civilian rule in Nigeria happened in ________.",
     options: [
-      "Peace",
-      "Unity",
-      "Dignity",
-      "Strength"
+      "1979",
+      "1983",
+      "1999",
+      "2007"
     ],
-    correctAnswer: "Dignity",
+    correctAnswer: "1999",
     marks: 1
   },
   {
     id: 7,
     type: 'multiple-choice',
     subject: 'history',
-    question: "Nigeria's cultural heritage can be preserved through _______.",
+    question: "Under civilian rule, laws are made by the ________.",
     options: [
-      "Forgetting old customs",
-      "Promoting traditional festivals and languages",
-      "Copying foreign culture only",
-      "Ignoring local traditions"
+      "army",
+      "judiciary",
+      "legislature",
+      "police"
     ],
-    correctAnswer: "Promoting traditional festivals and languages",
+    correctAnswer: "legislature",
     marks: 1
   },
   {
     id: 8,
     type: 'multiple-choice',
     subject: 'history',
-    question: "Which of the following is a cultural practice in Nigeria?",
+    question: "One advantage of civilian rule is ________.",
     options: [
-      "Dancing and singing",
-      "Sleeping all day",
-      "Playing games online",
-      "Watching foreign movies"
+      "abuse of power",
+      "respect for human rights",
+      "use of force",
+      "suspension of elections"
     ],
-    correctAnswer: "Dancing and singing",
+    correctAnswer: "respect for human rights",
     marks: 1
   },
   {
     id: 9,
     type: 'multiple-choice',
     subject: 'history',
-    question: "Which Nigerian festival celebrates the new yam harvest?",
+    question: "Military rule is a government led by the ________.",
     options: [
-      "Durbar festival",
-      "New Yam festival",
-      "Osun-Osogbo festival",
-      "Eyo festival"
+      "civilians",
+      "politicians",
+      "armed forces",
+      "judges"
     ],
-    correctAnswer: "New Yam festival",
+    correctAnswer: "armed forces",
     marks: 1
   },
   {
     id: 10,
     type: 'multiple-choice',
     subject: 'history',
-    question: "The Osun-Osogbo festival is celebrated to honour which goddess?",
+    question: "Nigeria first experienced military rule in ________.",
     options: [
-      "Oya",
-      "Yemoja",
-      "Osun",
-      "Sango"
+      "1960",
+      "1963",
+      "1966",
+      "1979"
     ],
-    correctAnswer: "Osun",
+    correctAnswer: "1966",
     marks: 1
   },
   {
     id: 11,
     type: 'multiple-choice',
     subject: 'history',
-    question: "Cultural practices help people to —",
+    question: "The head of government during military rule is usually called ________.",
     options: [
-      "forget their history",
-      "destroy their traditions",
-      "promote unity and identity",
-      "fight one another"
+      "President",
+      "Prime Minister",
+      "Head of State",
+      "Speaker"
     ],
-    correctAnswer: "promote unity and identity",
+    correctAnswer: "Head of State",
     marks: 1
   },
   {
     id: 12,
     type: 'multiple-choice',
     subject: 'history',
-    question: "Which of the following is NOT a festival in Nigeria?",
+    question: "Military rulers come to power through ________.",
     options: [
-      "Eyo festival",
-      "Christmas",
-      "Independence Day",
-      "dancing"
+      "elections",
+      "inheritance",
+      "coup d'état",
+      "referendum"
     ],
-    correctAnswer: "dancing",
+    correctAnswer: "coup d'état",
     marks: 1
   },
   {
     id: 13,
     type: 'multiple-choice',
     subject: 'history',
-    question: "The Eyo festival is mainly celebrated in —",
+    question: "One feature of military rule is ________.",
     options: [
-      "Enugu",
-      "Lagos",
-      "Kano",
-      "Jos"
+      "freedom of speech",
+      "constitution suspension",
+      "regular elections",
+      "party politics"
     ],
-    correctAnswer: "Lagos",
+    correctAnswer: "constitution suspension",
     marks: 1
   },
   {
     id: 14,
     type: 'multiple-choice',
     subject: 'history',
-    question: "Traditional marriage ceremonies are examples of —",
+    question: "Military rule does not allow ________.",
     options: [
-      "political practices",
-      "cultural practices",
-      "economic activities",
-      "sports events"
+      "soldiers",
+      "decrees",
+      "political parties",
+      "commands"
     ],
-    correctAnswer: "cultural practices",
+    correctAnswer: "political parties",
     marks: 1
   },
   {
     id: 15,
     type: 'multiple-choice',
     subject: 'history',
-    question: "Which of the following shows respect for Nigerian culture?",
+    question: "One disadvantage of military rule is ________.",
     options: [
-      "Greeting elders politely",
-      "Ignoring traditional festivals",
-      "Copying foreign cultures",
-      "Refusing to wear native clothes"
+      "fast decision making",
+      "respect for rights",
+      "abuse of human rights",
+      "national unity"
     ],
-    correctAnswer: "Greeting elders politely",
+    correctAnswer: "abuse of human rights",
     marks: 1
   },
   {
     id: 16,
     type: 'multiple-choice',
     subject: 'history',
-    question: "The Argungu fishing festival takes place in which state?",
+    question: "Military rule ended in Nigeria in the year ________.",
     options: [
-      "Ogun",
-      "Kebbi",
-      "Enugu",
-      "Rivers"
+      "1983",
+      "1993",
+      "1999",
+      "2003"
     ],
-    correctAnswer: "Kebbi",
+    correctAnswer: "1999",
     marks: 1
   },
   {
     id: 17,
     type: 'multiple-choice',
     subject: 'history',
-    question: "The main importance of festivals in Nigeria is to",
+    question: "Oil economy means an economy that depends mainly on ________.",
     options: [
-      "waste time and money",
-      "promote tourism and unity",
-      "stop education",
-      "cause quarrels"
+      "agriculture",
+      "manufacturing",
+      "crude oil",
+      "tourism"
     ],
-    correctAnswer: "promote tourism and unity",
+    correctAnswer: "crude oil",
     marks: 1
   },
   {
     id: 18,
     type: 'multiple-choice',
     subject: 'history',
-    question: "Cultural dances in Nigeria are performed to —",
+    question: "The major oil-producing region in Nigeria is the ________.",
     options: [
-      "celebrate events and traditions",
-      "make people tired",
-      "replace sports",
-      "stop people from working"
+      "Sahel region",
+      "Forest region",
+      "Niger Delta",
+      "Guinea Savannah"
     ],
-    correctAnswer: "celebrate events and traditions",
+    correctAnswer: "Niger Delta",
     marks: 1
   },
   {
     id: 19,
     type: 'multiple-choice',
     subject: 'history',
-    question: "Which of these is a way of preserving our culture?",
+    question: "Crude oil is mainly used to earn ________ for Nigeria.",
     options: [
-      "Teaching it in schools",
-      "Forgetting it",
-      "Copying others",
-      "Destroying it"
+      "food",
+      "foreign exchange",
+      "manpower",
+      "education"
     ],
-    correctAnswer: "Teaching it in schools",
+    correctAnswer: "foreign exchange",
     marks: 1
   },
   {
     id: 20,
     type: 'multiple-choice',
     subject: 'history',
-    question: "Dressing in traditional attire during festivals shows —",
+    question: "One product refined from crude oil is ________.",
     options: [
-      "laziness",
-      "pride in culture",
-      "poverty",
-      "anger"
+      "cocoa",
+      "cement",
+      "petrol",
+      "cotton"
     ],
-    correctAnswer: "pride in culture",
+    correctAnswer: "petrol",
     marks: 1
   },
   {
     id: 21,
     type: 'multiple-choice',
     subject: 'history',
-    question: "Which of the following statements is true about Nigerian culture?",
+    question: "The discovery of crude oil in Nigeria was in ________.",
     options: [
-      "It is the same everywhere in the world",
-      "Each ethnic group has its own traditions and festivals",
-      "Only foreigners celebrate Nigerian culture",
-      "Culture has no meaning in Nigeria"
+      "1956",
+      "1960",
+      "1970",
+      "1999"
     ],
-    correctAnswer: "Each ethnic group has its own traditions and festivals",
+    correctAnswer: "1956",
     marks: 1
   },
   {
     id: 22,
     type: 'multiple-choice',
     subject: 'history',
-    question: "The ruler of the Yoruba kingdom of Ife was called the ______.",
+    question: "One problem of oil economy is ________.",
     options: [
-      "Obi",
-      "Oba",
-      "Ooni",
-      "Emir"
+      "employment generation",
+      "environmental pollution",
+      "industrial growth",
+      "rural development"
     ],
-    correctAnswer: "Ooni",
+    correctAnswer: "environmental pollution",
     marks: 1
   },
   {
     id: 23,
     type: 'multiple-choice',
     subject: 'history',
-    question: "The Hausa people were ruled by ______.",
+    question: "Oil economy reduced Nigeria's focus on ________.",
     options: [
-      "Oba",
-      "Emir",
-      "Ooni",
-      "King"
+      "banking",
+      "agriculture",
+      "education",
+      "sports"
     ],
-    correctAnswer: "Emir",
+    correctAnswer: "agriculture",
     marks: 1
   },
   {
     id: 24,
     type: 'multiple-choice',
     subject: 'history',
-    question: "The Nok culture was known for making beautiful ______.",
+    question: "An industry is a place where ________ are produced.",
     options: [
-      "Iron tools",
-      "Terracotta figures",
-      "Gold ornaments",
-      "Wooden carvings"
+      "laws",
+      "goods",
+      "votes",
+      "taxes"
     ],
-    correctAnswer: "Terracotta figures",
+    correctAnswer: "goods",
     marks: 1
   },
   {
     id: 25,
     type: 'multiple-choice',
     subject: 'history',
-    question: "The title of the ruler in the Benin Kingdom was ______.",
+    question: "One factor that encourages industrial growth is ________.",
     options: [
-      "Oba of Benin",
-      "Emir of Benin",
-      "Ooni of Benin",
-      "Obi of Benin"
+      "poor roads",
+      "electricity supply",
+      "lack of capital",
+      "insecurity"
     ],
-    correctAnswer: "Oba of Benin",
+    correctAnswer: "electricity supply",
     marks: 1
   },
   {
     id: 26,
     type: 'multiple-choice',
     subject: 'history',
-    question: "The early Nigerian kingdoms were known for their ______.",
+    question: "Industries help to reduce ________.",
     options: [
-      "Laziness",
-      "Trade and craft",
-      "Farming only",
-      "Wars alone"
+      "literacy",
+      "employment",
+      "unemployment",
+      "production"
     ],
-    correctAnswer: "Trade and craft",
+    correctAnswer: "unemployment",
     marks: 1
   },
   {
     id: 27,
     type: 'multiple-choice',
     subject: 'history',
-    question: "Which kingdom was famous for its bronze works?",
+    question: "Small-scale industries require ________ capital.",
     options: [
-      "Ife Kingdom",
-      "Benin Kingdom",
-      "Kanem-Bornu Empire",
-      "Hausa Kingdom"
+      "large",
+      "foreign",
+      "little",
+      "unlimited"
     ],
-    correctAnswer: "Benin Kingdom",
+    correctAnswer: "little",
     marks: 1
   },
   {
     id: 28,
     type: 'multiple-choice',
     subject: 'history',
-    question: "Leadership in early Nigerian kingdoms was mostly based on ______.",
+    question: "One example of an industry in Nigeria is ________.",
     options: [
-      "Wisdom and bravery",
-      "Age only",
-      "Wealth alone",
-      "Education level"
+      "market",
+      "school",
+      "textile factory",
+      "church"
     ],
-    correctAnswer: "Wisdom and bravery",
+    correctAnswer: "textile factory",
     marks: 1
   },
   {
     id: 29,
     type: 'multiple-choice',
     subject: 'history',
-    question: "The Kanem-Bornu Empire was ruled by ______.",
+    question: "Industries contribute to national development by ________.",
     options: [
-      "Ooni",
-      "Emir",
-      "Mai",
-      "Chief"
+      "increasing imports",
+      "creating jobs",
+      "causing pollution",
+      "raising prices"
     ],
-    correctAnswer: "Mai",
+    correctAnswer: "creating jobs",
     marks: 1
   },
   {
     id: 30,
     type: 'multiple-choice',
     subject: 'history',
-    question: "Nigerian traditional music is often used to ______.",
+    question: "The growth of industries leads to ________ development.",
     options: [
-      "cause trouble",
-      "celebrate and educate",
-      "fight people",
-      "make noise"
+      "political",
+      "rural",
+      "industrial",
+      "economic"
     ],
-    correctAnswer: "celebrate and educate",
+    correctAnswer: "economic",
     marks: 1
-  },
-  {
-    id: 31,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "Which of the following is a Nigerian traditional instrument?",
-    options: [
-      "Guitar",
-      "Talking drum",
-      "Piano",
-      "Violin"
-    ],
-    correctAnswer: "Talking drum",
-    marks: 1
-  },
-  {
-    id: 32,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "The talking drum is mostly used by the ______ people.",
-    options: [
-      "Hausa",
-      "Yoruba",
-      "Igbo",
-      "Tiv"
-    ],
-    correctAnswer: "Yoruba",
-    marks: 1
-  },
-  {
-    id: 33,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "Cultural values help people to ______.",
-    options: [
-      "forget their tradition",
-      "live peacefully and respect others",
-      "fight with neighbors",
-      "reject their elders"
-    ],
-    correctAnswer: "live peacefully and respect others",
-    marks: 1
-  },
-  {
-    id: 34,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "Which of these is a form of Nigerian traditional music?",
-    options: [
-      "Juju",
-      "Jazz",
-      "Hip-hop",
-      "Rock"
-    ],
-    correctAnswer: "Juju",
-    marks: 1
-  },
-  {
-    id: 35,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "The xylophone is made from ______.",
-    options: [
-      "wood",
-      "plastic",
-      "glass",
-      "iron"
-    ],
-    correctAnswer: "wood",
-    marks: 1
-  },
-  {
-    id: 36,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "One importance of cultural values is to ______.",
-    options: [
-      "teach laziness",
-      "promote unity and respect",
-      "cause disobedience",
-      "destroy peace"
-    ],
-    correctAnswer: "promote unity and respect",
-    marks: 1
-  },
-  {
-    id: 37,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "The Hausa people play music using the instrument called ______.",
-    options: [
-      "Sekere",
-      "Kakaki",
-      "Drum set",
-      "Guitar"
-    ],
-    correctAnswer: "Kakaki",
-    marks: 1
-  },
-  {
-    id: 38,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "Traditional songs are used during ______.",
-    options: [
-      "festivals and ceremonies",
-      "fighting and war",
-      "sleeping time",
-      "examinations"
-    ],
-    correctAnswer: "festivals and ceremonies",
-    marks: 1
-  },
-  {
-    id: 39,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "Respect for elders, honesty and hard work are examples of ______.",
-    options: [
-      "bad habits",
-      "cultural values",
-      "school subjects",
-      "musical instruments"
-    ],
-    correctAnswer: "cultural values",
-    marks: 1
-  },
-  {
-    id: 40,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "The Zuma Rock is located in which state of Nigeria?",
-    options: [
-      "Lagos State",
-      "Niger State",
-      "Kano State",
-      "Enugu State"
-    ],
-    correctAnswer: "Niger State",
-    marks: 1
-  },
-  {
-    id: 41,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "The National Theatre is a historical building found in _______.",
-    options: [
-      "Abuja",
-      "Lagos",
-      "Kaduna",
-      "Ibadan"
-    ],
-    correctAnswer: "Lagos",
-    marks: 1
-  },
-  {
-    id: 42,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "The Ogbunike Cave is a famous landmark found in _______.",
-    options: [
-      "Enugu State",
-      "Anambra State",
-      "Rivers State",
-      "Cross River State"
-    ],
-    correctAnswer: "Anambra State",
-    marks: 1
-  },
-  {
-    id: 43,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "The Olumo Rock, a popular tourist attraction, is located in _______.",
-    options: [
-      "Abeokuta",
-      "Osogbo",
-      "Lokoja",
-      "Calabar"
-    ],
-    correctAnswer: "Abeokuta",
-    marks: 1
-  },
-  {
-    id: 44,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "The First Storey Building in Nigeria was built in _______.",
-    options: [
-      "1845",
-      "1960",
-      "1914",
-      "1850"
-    ],
-    correctAnswer: "1845",
-    marks: 1
-  },
-  {
-    id: 45,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "The First Storey Building in Nigeria is located in _______.",
-    options: [
-      "Badagry",
-      "Ibadan",
-      "Abeokuta",
-      "Benin"
-    ],
-    correctAnswer: "Badagry",
-    marks: 1
-  },
-  {
-    id: 46,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "The Benin Moat was built to protect the ancient _______ Kingdom.",
-    options: [
-      "Oyo",
-      "Benin",
-      "Nri",
-      "Kanem-Bornu"
-    ],
-    correctAnswer: "Benin",
-    marks: 1
-  },
-  {
-    id: 47,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "The Aso Rock is a major landmark found in _______.",
-    options: [
-      "Abuja",
-      "Lagos",
-      "Kano",
-      "Port Harcourt"
-    ],
-    correctAnswer: "Abuja",
-    marks: 1
-  },
-  {
-    id: 48,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "The Idanre Hills, known for their beauty and history, are located in _______.",
-    options: [
-      "Ondo State",
-      "Kwara State",
-      "Edo State",
-      "Kogi State"
-    ],
-    correctAnswer: "Ondo State",
-    marks: 1
-  },
-  {
-    id: 49,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "The movement of people and goods from one place to another is called ______",
-    options: [
-      "Communication",
-      "Transportation",
-      "Production",
-      "Construction"
-    ],
-    correctAnswer: "Transportation",
-    marks: 1
-  },
-  {
-    id: 50,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "The earliest means of transportation in Nigeria was by __________.",
-    options: [
-      "Train",
-      "Canoe and foot",
-      "Airplane",
-      "Car"
-    ],
-    correctAnswer: "Canoe and foot",
-    marks: 1
-  },
-  {
-    id: 51,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "Which of the following is a modern means of transportation?",
-    options: [
-      "Walking",
-      "Camel riding",
-      "Airplane",
-      "Trekking"
-    ],
-    correctAnswer: "Airplane",
-    marks: 1
-  },
-  {
-    id: 52,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "Roads, railways, airways, and waterways are examples of __________.",
-    options: [
-      "Transport routes",
-      "Communication tools",
-      "Factories",
-      "Schools"
-    ],
-    correctAnswer: "Transport routes",
-    marks: 1
-  },
-  {
-    id: 53,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "The development of transportation helps to promote __________.",
-    options: [
-      "Isolation",
-      "Trade and commerce",
-      "Laziness",
-      "Fighting"
-    ],
-    correctAnswer: "Trade and commerce",
-    marks: 1
-  },
-  {
-    id: 54,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "Which of these is used for air transportation?",
-    options: [
-      "Ship",
-      "Train",
-      "Airplane",
-      "Lorry"
-    ],
-    correctAnswer: "Airplane",
-    marks: 1
-  },
-  {
-    id: 55,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "The improvement of transportation in Nigeria helps in the movement of ________",
-    options: [
-      "Goods and people",
-      "Animals only",
-      "Teachers only",
-      "Soldiers only"
-    ],
-    correctAnswer: "Goods and people",
-    marks: 1
-  },
-  {
-    id: 56,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "Good transportation system leads to the development of _________",
-    options: [
-      "Markets and industries",
-      "Diseases",
-      "Laziness",
-      "Crime"
-    ],
-    correctAnswer: "Markets and industries",
-    marks: 1
-  },
-  {
-    id: 57,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "Nigeria traditional music is part of our _______",
-    options: [
-      "culture",
-      "fight",
-      "remembrance",
-      "kingdom"
-    ],
-    correctAnswer: "culture",
-    marks: 1
-  },
-  {
-    id: 58,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "Is it good to respect our elders.",
-    options: [
-      "yes",
-      "no",
-      "maybe",
-      "I don't know"
-    ],
-    correctAnswer: "yes",
-    marks: 1
-  },
-  {
-    id: 59,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "Olumo rock is a natural rock used by the _______ people.",
-    options: [
-      "Ijebu",
-      "Ilorin",
-      "Egba",
-      "Kogi"
-    ],
-    correctAnswer: "Egba",
-    marks: 1
-  },
-  {
-    id: 60,
-    type: 'multiple-choice',
-    subject: 'history',
-    question: "Zuma rock is a large rock known as the _______",
-    options: [
-      "Gateway to Abuja",
-      "Gateway to Ogun",
-      "Gateway to Ikeja",
-      "Gateway to Osun"
-    ],
-    correctAnswer: "Gateway to Abuja",
-    marks: 1
-  },
-
-  
-  
+  }
 ];

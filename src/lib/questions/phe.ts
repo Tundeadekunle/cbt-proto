@@ -1,845 +1,425 @@
 import { Question } from '@/types';
 
 export const pheQuestions: Question[] = [
-  // Section A: Multiple Choice Questions (60 Questions)
+  // Section A: Multiple Choice Questions (30 Questions)
   {
     id: 1,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Which of the following is a good personal hygiene habit?",
+    question: "Which of the following is an example of a local game?",
     options: [
-      "Wearing dirty clothes",
-      "Bathing regularly",
-      "Sleeping without brushing",
-      "Eating with unwashed hands"
+      "Tennis",
+      "Rats and Rabbits",
+      "Basketball",
+      "Badminton"
     ],
-    correctAnswer: "Bathing regularly",
+    correctAnswer: "Rats and Rabbits",
     marks: 1
   },
   {
     id: 2,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Why is it important to wash your hands before eating?",
+    question: "“Cat and Rabbits” is a game mainly played to develop ______.",
     options: [
-      "To make your hands smell nice",
-      "To remove germs and dirt",
-      "To look good",
-      "To waste water"
+      "Reading skills",
+      "Speed and alertness",
+      "Writing skills",
+      "Singing ability"
     ],
-    correctAnswer: "To remove germs and dirt",
+    correctAnswer: "Speed and alertness",
     marks: 1
   },
   {
     id: 3,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Which of these helps to keep the body fit and strong?",
+    question: "Fire on the Mountain is a game that involves mainly ______.",
     options: [
-      "Sleeping all day",
-      "Watching television",
-      "Doing regular exercise",
-      "Eating junk food"
+      "Sitting",
+      "Jumping and running",
+      "Sleeping",
+      "Swimming"
     ],
-    correctAnswer: "Doing regular exercise",
+    correctAnswer: "Jumping and running",
     marks: 1
   },
   {
     id: 4,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "How many times should we brush our teeth daily?",
+    question: "Local games are usually played ______.",
     options: [
-      "Once",
-      "Twice",
-      "Thrice",
-      "Four times"
+      "Indoors only",
+      "With machines",
+      "In open spaces",
+      "On the computer"
     ],
-    correctAnswer: "Twice",
+    correctAnswer: "In open spaces",
     marks: 1
   },
   {
     id: 5,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "What should a pupil do when entering the classroom?",
+    question: "One importance of local games is that they help children to ______.",
     options: [
-      "Run and shout",
-      "Greet the teacher politely",
-      "Sit anywhere without asking",
-      "Ignore everyone"
+      "Become lazy",
+      "Exercise the body",
+      "Sleep all day",
+      "Miss school"
     ],
-    correctAnswer: "Greet the teacher politely",
+    correctAnswer: "Exercise the body",
     marks: 1
   },
   {
     id: 6,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Which of the following is part of a good classroom routine?",
+    question: "Which of the following is a basic ball skill?",
     options: [
-      "Keeping the class dirty",
-      "Doing assignments on time",
-      "Fighting with classmates",
-      "Sleeping in class"
+      "Writing",
+      "Kicking",
+      "Drawing",
+      "Reading"
     ],
-    correctAnswer: "Doing assignments on time",
+    correctAnswer: "Kicking",
     marks: 1
   },
   {
     id: 7,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Why should we take our bath every day?",
+    question: "Stopping the ball means ______.",
     options: [
-      "To look fresh and prevent body odor",
-      "To waste water",
-      "To show off",
-      "To feel cold"
+      "Throwing the ball away",
+      "Preventing the ball from moving",
+      "Kicking the ball hard",
+      "Hiding the ball"
     ],
-    correctAnswer: "To look fresh and prevent body odor",
+    correctAnswer: "Preventing the ball from moving",
     marks: 1
   },
   {
     id: 8,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Exercise helps the body by —",
+    question: "Kicking is mainly done using the ______.",
     options: [
-      "Making us lazy",
-      "Keeping us healthy and active",
-      "Causing sickness",
-      "Making us sleep all day"
+      "Head",
+      "Hand",
+      "Leg",
+      "Elbow"
     ],
-    correctAnswer: "Keeping us healthy and active",
+    correctAnswer: "Leg",
     marks: 1
   },
   {
     id: 9,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Which of these should a pupil do before and after school?",
+    question: "Catching a ball helps to develop ______.",
     options: [
-      "Eat junk food",
-      "Wash hands and change clothes",
-      "Play all the time",
-      "Sleep without bathing"
+      "Balance",
+      "Coordination",
+      "Sleep",
+      "Hunger"
     ],
-    correctAnswer: "Wash hands and change clothes",
+    correctAnswer: "Coordination",
     marks: 1
   },
   {
     id: 10,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "A clean and orderly classroom helps pupils to —",
+    question: "Which of these is NOT a ball game skill?",
     options: [
-      "Fall sick",
-      "Learn better and stay healthy",
-      "Argue with the teacher",
-      "Play carelessly"
+      "Throwing",
+      "Dribbling",
+      "Running",
+      "Reading"
     ],
-    correctAnswer: "Learn better and stay healthy",
+    correctAnswer: "Reading",
     marks: 1
   },
   {
     id: 11,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Which of the following helps to remove germs from our hands?",
+    question: "One safety rule in games is to ______ before playing.",
     options: [
-      "Sleeping",
-      "Hand washing",
-      "Reading",
-      "Singing"
+      "Eat too much",
+      "Warm up the body",
+      "Fight others",
+      "Sit down"
     ],
-    correctAnswer: "Hand washing",
+    correctAnswer: "Warm up the body",
     marks: 1
   },
   {
     id: 12,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "When should we wash our hands?",
+    question: "Playing on a rough surface can cause ______.",
     options: [
-      "After playing and before eating",
-      "Only in the morning",
-      "Only on weekends",
-      "Before going to bed"
+      "Fun",
+      "Happiness",
+      "Injuries",
+      "Strength"
     ],
-    correctAnswer: "After playing and before eating",
+    correctAnswer: "Injuries",
     marks: 1
   },
   {
     id: 13,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "What is the best thing to use when washing hands?",
+    question: "Players should wear ______ during games.",
     options: [
-      "Water only",
-      "Soap and clean water",
-      "Oil and towel",
-      "Sand and water"
+      "Tight shoes",
+      "Proper sportswear",
+      "School uniform",
+      "Slippers"
     ],
-    correctAnswer: "Soap and clean water",
+    correctAnswer: "Proper sportswear",
     marks: 1
   },
   {
     id: 14,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Hand washing helps to prevent __________.",
+    question: "Which of the following is a safe behavior during games?",
     options: [
-      "Dancing",
-      "Sickness and diseases",
-      "Sleeping",
-      "Reading"
+      "Pushing others",
+      "Fighting",
+      "Obeying rules",
+      "Cheating"
     ],
-    correctAnswer: "Sickness and diseases",
+    correctAnswer: "Obeying rules",
     marks: 1
   },
   {
     id: 15,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Which of these diseases can be prevented by handwashing?",
+    question: "First aid is important during games to ______.",
     options: [
-      "Malaria",
-      "Diarrhea",
-      "Cough",
-      "Headache"
+      "Punish players",
+      "Treat injuries",
+      "Stop the game",
+      "Choose a winner"
     ],
-    correctAnswer: "Diarrhea",
+    correctAnswer: "Treat injuries",
     marks: 1
   },
   {
     id: 16,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "A good hygiene routine includes __________.",
+    question: "Coming into and out of water safely helps to prevent ______.",
     options: [
-      "Eating dirty food",
-      "Wearing dirty clothes",
-      "Brushing teeth and bathing daily",
-      "Sleeping without bathing"
+      "Fun",
+      "Slipping",
+      "Swimming",
+      "Floating"
     ],
-    correctAnswer: "Brushing teeth and bathing daily",
+    correctAnswer: "Slipping",
     marks: 1
   },
   {
     id: 17,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Before and after eating, you should always __________.",
+    question: "Adjusting to water means ______.",
     options: [
-      "Run around",
-      "Wash your hands",
-      "Sleep",
-      "Watch TV"
+      "Fear of water",
+      "Getting used to water",
+      "Running away from water",
+      "Drinking water"
     ],
-    correctAnswer: "Wash your hands",
+    correctAnswer: "Getting used to water",
     marks: 1
   },
   {
     id: 18,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Which of the following is a sign of poor hygiene?",
+    question: "Breathing in swimming is done mainly through the ______.",
     options: [
-      "Clean clothes",
-      "Dirty nails",
-      "Brushing teeth",
-      "Bathing"
+      "Ears",
+      "Nose and mouth",
+      "Eyes",
+      "Hands"
     ],
-    correctAnswer: "Dirty nails",
+    correctAnswer: "Nose and mouth",
     marks: 1
   },
   {
     id: 19,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Why is it important to keep our body clean?",
+    question: "Face float is a skill where the swimmer ______.",
     options: [
-      "To look good and stay healthy",
-      "To get dirty again",
-      "To sleep more",
-      "To waste water"
+      "Stands in water",
+      "Floats with face in water",
+      "Jumps out of water",
+      "Runs in water"
     ],
-    correctAnswer: "To look good and stay healthy",
+    correctAnswer: "Floats with face in water",
     marks: 1
   },
   {
     id: 20,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "The correct way to dry your hands after washing is by __________.",
+    question: "Which of the following is a beginner swimming skill?",
     options: [
-      "Using a clean towel or air drying",
-      "Wiping on dirty clothes",
-      "Shaking your hands",
-      "Using sand"
+      "Diving",
+      "Face float",
+      "Racing",
+      "High jump"
     ],
-    correctAnswer: "Using a clean towel or air drying",
+    correctAnswer: "Face float",
     marks: 1
   },
   {
     id: 21,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Fitness exercise helps to keep the body __________.",
+    question: "One benefit of swimming is that it helps to ______.",
     options: [
-      "weak",
-      "strong",
-      "tired",
-      "lazy"
+      "Strengthen the body",
+      "Cause sickness",
+      "Reduce height",
+      "Make one lazy"
     ],
-    correctAnswer: "strong",
+    correctAnswer: "Strengthen the body",
     marks: 1
   },
   {
     id: 22,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "The ability of the body to stretch easily without pain is called _________",
+    question: "Swimming is good for keeping the body ______.",
     options: [
-      "endurance",
-      "flexibility",
-      "speed",
-      "balance"
+      "Weak",
+      "Fit",
+      "Dirty",
+      "Tired"
     ],
-    correctAnswer: "flexibility",
+    correctAnswer: "Fit",
     marks: 1
   },
   {
     id: 23,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Which of the following exercises improves flexibility?",
+    question: "Swimming can help improve ______.",
     options: [
-      "Jogging",
-      "Bending and stretching",
-      "Running races",
-      "Jumping"
+      "Breathing",
+      "Sleeping in class",
+      "Writing speed",
+      "Reading ability"
     ],
-    correctAnswer: "Bending and stretching",
+    correctAnswer: "Breathing",
     marks: 1
   },
   {
     id: 24,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "The ability to perform an activity for a long time without getting tired is called __",
+    question: "A swimmer should never swim ______.",
     options: [
-      "strength",
-      "Endurance",
-      "Flexibility",
-      "rest"
+      "With friends",
+      "Under supervision",
+      "Alone",
+      "In a pool"
     ],
-    correctAnswer: "Endurance",
+    correctAnswer: "Alone",
     marks: 1
   },
   {
     id: 25,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Which of these exercises can improve endurance?",
+    question: "Before swimming, one should ______.",
     options: [
-      "Short sprints",
-      "Long-distance running",
-      "Standing still",
-      "Sleeping"
+      "Eat heavy food",
+      "Warm up the body",
+      "Run away",
+      "Fight"
     ],
-    correctAnswer: "Long-distance running",
+    correctAnswer: "Warm up the body",
     marks: 1
   },
   {
     id: 26,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Touching your toes without bending your knees helps to improve __________.",
+    question: "Running around the swimming pool is ______.",
     options: [
-      "flexibility",
-      "Balance",
-      "Endurance",
-      "strength"
+      "Safe",
+      "Dangerous",
+      "Encouraged",
+      "Fun only"
     ],
-    correctAnswer: "flexibility",
+    correctAnswer: "Dangerous",
     marks: 1
   },
   {
     id: 27,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "One benefit of fitness exercise is that it __________.",
+    question: "Swimming without a lifeguard nearby can be ______.",
     options: [
-      "causes sickness",
-      "makes us dull",
-      "keeps the body fit and healthy",
-      "weakens the muscles"
+      "Safe",
+      "Risky",
+      "Easy",
+      "Funny"
     ],
-    correctAnswer: "keeps the body fit and healthy",
+    correctAnswer: "Risky",
     marks: 1
   },
   {
     id: 28,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Which of the following is not an example of endurance exercise?",
+    question: "Which of the following should be obeyed in swimming?",
     options: [
-      "Swimming",
-      "Walking long distances",
-      "Skipping",
-      "Sleeping"
+      "Pool rules",
+      "Fighting rules",
+      "Cheating rules",
+      "Noise rules"
     ],
-    correctAnswer: "Sleeping",
+    correctAnswer: "Pool rules",
     marks: 1
   },
   {
     id: 29,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Stretching before and after exercise helps to __________.",
+    question: "Swimming helps to relax the ______.",
     options: [
-      "prevent injury",
-      "make us lazy",
-      "stop growth",
-      "weaken muscles"
+      "Books",
+      "Body and mind",
+      "Shoes",
+      "Classroom"
     ],
-    correctAnswer: "prevent injury",
+    correctAnswer: "Body and mind",
     marks: 1
   },
   {
     id: 30,
     type: 'multiple-choice',
     subject: 'phe',
-    question: "Endurance and flexibility exercises help to improve __________.",
+    question: "Entering the water slowly helps to avoid ______.",
     options: [
-      "body fitness and health",
-      "tiredness and sleep",
-      "hunger and thirst",
-      "weakness and pain"
-    ],
-    correctAnswer: "body fitness and health",
-    marks: 1
-  },
-  {
-    id: 31,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Which of the following is the main reason we need sleep and rest?",
-    options: [
-      "To play more games",
-      "To help our body regain energy",
-      "To stay awake longer",
-      "To eat more food"
-    ],
-    correctAnswer: "To help our body regain energy",
-    marks: 1
-  },
-  {
-    id: 32,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Lack of sleep can make a person feel ______.",
-    options: [
-      "Happy",
-      "Strong",
-      "Tired",
-      "Active"
-    ],
-    correctAnswer: "Tired",
-    marks: 1
-  },
-  {
-    id: 33,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "How many hours of sleep should a child have every night?",
-    options: [
-      "2–3 hours",
-      "5–6 hours",
-      "8–10 hours",
-      "12–15 hours"
-    ],
-    correctAnswer: "8–10 hours",
-    marks: 1
-  },
-  {
-    id: 34,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Rest helps the brain to ______.",
-    options: [
-      "Forget things",
-      "Work properly",
-      "Stop working",
-      "Sleep forever"
-    ],
-    correctAnswer: "Work properly",
-    marks: 1
-  },
-  {
-    id: 35,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Which of these activities shows that a person is resting?",
-    options: [
-      "Running",
-      "Reading",
-      "Sleeping",
-      "Dancing"
-    ],
-    correctAnswer: "Sleeping",
-    marks: 1
-  },
-  {
-    id: 36,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "When we rest after hard work, our muscles ______.",
-    options: [
-      "Get weaker",
-      "Recover and grow stronger",
-      "Become tired",
-      "Stop working"
-    ],
-    correctAnswer: "Recover and grow stronger",
-    marks: 1
-  },
-  {
-    id: 37,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "A person who does not sleep well at night may find it difficult to ______.",
-    options: [
-      "Eat food",
-      "Concentrate in class",
-      "Play football",
-      "Drink water"
-    ],
-    correctAnswer: "Concentrate in class",
-    marks: 1
-  },
-  {
-    id: 38,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Rest and sleep help to prevent ______.",
-    options: [
-      "Hunger",
-      "Sickness and stress",
       "Happiness",
-      "Exercise"
+      "Shock",
+      "Exercise",
+      "Fun"
     ],
-    correctAnswer: "Sickness and stress",
+    correctAnswer: "Shock",
     marks: 1
-  },
-  {
-    id: 39,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Sleeping too late at night can make a pupil ______ in the morning.",
-    options: [
-      "Very active",
-      "Sleepy and weak",
-      "Excited",
-      "Early to school"
-    ],
-    correctAnswer: "Sleepy and weak",
-    marks: 1
-  },
-  {
-    id: 40,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Which of the following is a good sleeping habit?",
-    options: [
-      "Watching TV till midnight",
-      "Using phone in bed",
-      "Sleeping early and waking up early",
-      "Skipping sleep to study"
-    ],
-    correctAnswer: "Sleeping early and waking up early",
-    marks: 1
-  },
-  {
-    id: 41,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "A balanced diet contains __________.",
-    options: [
-      "only carbohydrates",
-      "only proteins",
-      "all classes of food in the right amount",
-      "only fruits"
-    ],
-    correctAnswer: "all classes of food in the right amount",
-    marks: 1
-  },
-  {
-    id: 42,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Which of the following is a protective food?",
-    options: [
-      "Rice",
-      "Fish",
-      "Orange",
-      "Yam"
-    ],
-    correctAnswer: "Orange",
-    marks: 1
-  },
-  {
-    id: 43,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "The main function of carbohydrates is to __________.",
-    options: [
-      "build the body",
-      "provide energy",
-      "protect the body from diseases",
-      "repair worn-out tissues"
-    ],
-    correctAnswer: "provide energy",
-    marks: 1
-  },
-  {
-    id: 44,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Which of these foods is rich in protein?",
-    options: [
-      "Beans",
-      "Bread",
-      "Butter",
-      "Sugar"
-    ],
-    correctAnswer: "Beans",
-    marks: 1
-  },
-  {
-    id: 45,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "The food nutrient that helps the body to repair worn-out tissues is __________.",
-    options: [
-      "Fat",
-      "Protein",
-      "Vitamins",
-      "Minerals"
-    ],
-    correctAnswer: "Protein",
-    marks: 1
-  },
-  {
-    id: 46,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Fats and oils are mainly used by the body for __________.",
-    options: [
-      "growth",
-      "energy",
-      "building bones",
-      "fighting diseases"
-    ],
-    correctAnswer: "energy",
-    marks: 1
-  },
-  {
-    id: 47,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Eating too much junk food can cause__________.",
-    options: [
-      "strong bones",
-      "obesity",
-      "clear eyes",
-      "good health"
-    ],
-    correctAnswer: "obesity",
-    marks: 1
-  },
-  {
-    id: 48,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Which of the following is a source of vitamins?",
-    options: [
-      "Meat",
-      "Fish",
-      "Carrot",
-      "Rice"
-    ],
-    correctAnswer: "Carrot",
-    marks: 1
-  },
-  {
-    id: 49,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "The nutrient that helps to regulate body processes is __________.",
-    options: [
-      "Vitamins and minerals",
-      "Carbohydrates",
-      "Proteins",
-      "Fats"
-    ],
-    correctAnswer: "Vitamins and minerals",
-    marks: 1
-  },
-  {
-    id: 50,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "To stay healthy, we should __________.",
-    options: [
-      "skip meals often",
-      "eat a balanced diet regularly",
-      "eat only one type of food",
-      "eat too much sugar"
-    ],
-    correctAnswer: "eat a balanced diet regularly",
-    marks: 1
-  },
-  {
-    id: 51,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Which of the following is a safety rule at home?",
-    options: [
-      "Playing with sharp objects",
-      "Running on wet floors",
-      "Keeping matches away from children",
-      "Touching electric wires"
-    ],
-    correctAnswer: "Keeping matches away from children",
-    marks: 1
-  },
-  {
-    id: 52,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "What should you do when you see a fire outbreak?",
-    options: [
-      "Hide under the bed",
-      "Shout for help and inform an adult",
-      "Pour petrol on it",
-      "Ignore it"
-    ],
-    correctAnswer: "Shout for help and inform an adult",
-    marks: 1
-  },
-  {
-    id: 53,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Which of these is the safest way to cross the road to school?",
-    options: [
-      "Run quickly across",
-      "Cross anywhere you like",
-      "Cross at the zebra crossing",
-      "Close your eyes and cross"
-    ],
-    correctAnswer: "Cross at the zebra crossing",
-    marks: 1
-  },
-  {
-    id: 54,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "What should you do when you get hurt in school?",
-    options: [
-      "Keep quiet about it",
-      "Tell your teacher immediately",
-      "Go home without telling anyone",
-      "Play with your friends"
-    ],
-    correctAnswer: "Tell your teacher immediately",
-    marks: 1
-  },
-  {
-    id: 55,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Why should we not run in the classroom?",
-    options: [
-      "It makes learning faster",
-      "It may cause accidents and injuries",
-      "It helps us keep fit",
-      "It makes the teacher happy"
-    ],
-    correctAnswer: "It may cause accidents and injuries",
-    marks: 1
-  },
-  {
-    id: 56,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Which of the following is not a safety rule at home?",
-    options: [
-      "Turning off electrical appliances after use",
-      "Playing with sockets",
-      "Keeping the house clean",
-      "Locking doors when going out"
-    ],
-    correctAnswer: "Playing with sockets",
-    marks: 1
-  },
-  {
-    id: 57,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "When using sharp objects like knives, we should —",
-    options: [
-      "Use them carelessly",
-      "Play with them",
-      "Handle them carefully",
-      "Give them to babies"
-    ],
-    correctAnswer: "Handle them carefully",
-    marks: 1
-  },
-  {
-    id: 58,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "What should you do if you spill water on the floor?",
-    options: [
-      "Leave it to dry",
-      "Mop it immediately",
-      "Call your friend to play on it",
-      "Step on it to test if it's slippery"
-    ],
-    correctAnswer: "Mop it immediately",
-    marks: 1
-  },
-  {
-    id: 59,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Why should we obey safety rules in school?",
-    options: [
-      "To avoid punishment",
-      "To make learning safe and enjoyable",
-      "To make noise in class",
-      "To impress our friends"
-    ],
-    correctAnswer: "To make learning safe and enjoyable",
-    marks: 1
-  },
-  {
-    id: 60,
-    type: 'multiple-choice',
-    subject: 'phe',
-    question: "Which of these people helps us stay safe in school?",
-    options: [
-      "Class captain",
-      "School security officer",
-      "School gardener",
-      "Cleaner"
-    ],
-    correctAnswer: "School security officer",
-    marks: 1
-  },
+  }
 ];
